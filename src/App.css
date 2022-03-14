@@ -1,18 +1,53 @@
-.content {
+body * {
+  transition: all 2s ease;
+    
+}
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  /* transition: all 2s; */
+  -webkit-transition: max-height 0.8s;
+	-moz-transition: max-height 0.8s;
+	transition: max-height 0.8s;
+
+  max-height: 1000px;
+}
+nav.hidden {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 2s;
+  
+}
+.container {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
+  max-width: none;
 }
-.content div {
+.container .content {
   height: 100vh;
   scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.one {
-  background-color: green;
+.content figure{
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  /* filter: blur(2px) brightness(50%); */
+  filter: brightness(50%);
 }
-.two {
-  background-color: red;
+
+.one figure {
+  filter: blur(2px) brightness(50%);
+  
 }
-.three {
-  background-color: blue;
+
+.content figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
